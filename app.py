@@ -63,7 +63,6 @@ def apiAttractions():
 		}
 		return jsonify(info),500
 
-
 	# 組合 response
 	if(page <= (count/12)-1):
 		nextPage = page+1
@@ -148,6 +147,6 @@ def apiAttractionId(attractionId):
 
 
 
-app.run(port=3000, debug = True)
+app.run(port=3000)
 cursor.close()
 db.close()
