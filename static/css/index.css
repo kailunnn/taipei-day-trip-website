@@ -1,54 +1,5 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-img{
-    /* 適應 & 伸縮 */
-	  max-width: 100%; 
-	  /* 適應 & 伸縮 */
-	  height: auto;
-	  /* 圖片會預留 2-3px 在下面 */
-	  vertical-align: middle; 
-      object-fit: cover;
+nav {
+    background-color: #fff;
 }
 
 .navbar {
@@ -58,6 +9,7 @@ img{
     justify-content: space-between;
     align-items: center;
     height: 54px;
+    /* background-color: #fff; */
 }
 
 .navbar h1 {
@@ -65,6 +17,7 @@ img{
     font-size: 30px;
     line-height: 34px;
     font-weight: bold;
+    /* margin-left: 10px; */
 }
 
 .navbar-right {
@@ -79,25 +32,43 @@ img{
     margin: 10px;
 }
 
+.sticky { 
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    /* 以防寬度跑掉 */
+    /* width: 100%; */
+    left: 0;
+    right: 0;
+}
+
 .header {
-    height: 320px;
-    background-image: url(/static/images/welcome.png), linear-gradient(#AADDEE, #66AABB);
+    /* height: 320px; */
+    background: radial-gradient(ellipse at center,#AADDEE,#66AABB); 
+    /* background-image: url(/static/images/welcome.png), linear-gradient(#AADDEE, #66AABB); */
+    /* background-repeat: no-repeat; */
+    /* background-position: 82%; */
+}
+
+.backgroundPic {
+    /* height: 320px; */
+    /* background-image: url(/static/images/welcome.png), linear-gradient(#AADDEE, #66AABB); */
+    background-image: url(/static/images/welcome.png);
     background-repeat: no-repeat;
     background-position: 82%;
-    margin-bottom: 40px;
+
     
 }
 
 .titleText {
-    /* margin-left: 50px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 320px;
     max-width: 1200px;
-    /* margin-left: 19%; */
     margin: 0 auto;
     color: #F8F8F8;
+    /* padding-left: 10px; */
 }
 
 .titleText h2 {
@@ -129,12 +100,9 @@ img{
 }
 
 .search {
-    /* width: 60px; */
-    /* height: 0; */
     border-radius: 0px 5px 5px 0px;
     border: none;
     padding: 8px 15px;
-    /* height: 46px; */
     background: #448899;
 }
 
@@ -145,7 +113,8 @@ img{
 .attraction {
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
+    margin-top: 40px;
 }
 
 .attraction ul {
@@ -159,19 +128,25 @@ img{
     border: 1px solid #E8E8E8;
     border-radius: 5px;
     font-size: 16px;
-    line-height: 13px;
-    /* line-height: 40px; */
+    /* line-height: 13px; */
     color: #757575;
 }
 
 .attraction img {
-    display: block;
+    /* display: block; */
+    width: 100%;
     border-radius: 5px 5px 0px 0px;
+    aspect-ratio: 322/202;
 }
 
 .attractionName {
     font-weight: bold;
-    padding: 10px 10px 7px 10px;
+    padding: 12px 10px 0px 10px;
+    /* 為了讓字 overflow */
+    white-space: nowrap;
+    overflow: hidden;
+    /* 變 ... */
+    text-overflow: ellipsis;
 }
 
 .category {
@@ -190,26 +165,61 @@ img{
     font-weight: bold;
     font-size: 16px;
     line-height: 13px;
+    margin-top: 40px;
 }
 
 /* 小於等於 1200 */
 @media (max-width: 1200px) {
     .navbar h1 {
-        margin-left: 10px;
+        margin: 10px;
     }
 
     .titleText {
         padding-left: 5%;
     }
 
-	/* .container {
+    .attraction {
+        width: 90%;
+    }
+
+    .attraction li {
+        width: 47%;
+    }
+
+    .backgroundPic {
+        background-image: url(/static/images/welcome-small.png);
+        background-position: right bottom;
+    }
+
+    .titleText {
+        height: 280px;
+    }
+}
+
+/* 小於等於 600 */
+@media (max-width: 600px) {
+	.attraction{
 		width: 90%;
 	}
 
-	/* .content li {
-		width: 49%;
-	} */ 
+    .attraction li {
+        width: 100%;
+        margin: 0px 0px 15px 0px;
+    }
+
+    .titleText {
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .siteKeyword {
+        width: 230px;
+    }
 }
+
+
+
+
 
 
 
