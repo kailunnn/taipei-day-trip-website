@@ -44,7 +44,7 @@ function searchAttraction(){
     getInfiniteData();
 }
 
-// 自動載入下一頁
+// 取得資料
 function getInfiniteData(){
     if(nextPage != null){
         // 沒有關鍵字
