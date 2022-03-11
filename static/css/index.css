@@ -1,0 +1,225 @@
+nav {
+    background-color: #fff;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    /* background-color: #fff; */
+}
+
+.navbar h1 {
+    color: #448899;
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: bold;
+    /* margin-left: 10px; */
+}
+
+.navbar-right {
+    display: flex;
+    font-size: 16px;
+    line-height: 13px;
+}
+
+.navbar-right a {
+    text-decoration: none;
+    color: #666666;
+    margin: 10px;
+}
+
+.sticky { 
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    /* 以防寬度跑掉 */
+    /* width: 100%; */
+    left: 0;
+    right: 0;
+}
+
+.header {
+    /* height: 320px; */
+    background: radial-gradient(ellipse at center,#AADDEE,#66AABB); 
+    /* background-image: url(/static/images/welcome.png), linear-gradient(#AADDEE, #66AABB); */
+    /* background-repeat: no-repeat; */
+    /* background-position: 82%; */
+}
+
+.backgroundPic {
+    /* height: 320px; */
+    /* background-image: url(/static/images/welcome.png), linear-gradient(#AADDEE, #66AABB); */
+    background-image: url(/static/images/welcome.png);
+    background-repeat: no-repeat;
+    background-position: 82%;
+
+    
+}
+
+.titleText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 320px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #F8F8F8;
+    /* padding-left: 10px; */
+}
+
+.titleText h2 {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 24px;
+    text-shadow: 0px 0px 30px #AABBCC;
+    margin-bottom: 15px;
+}
+
+.titleText p {
+    font-size: 16px;
+    line-height: 13px;
+    margin-bottom: 25px;
+}
+
+.siteKeyword {
+    width: 370px;
+    /* 消除與 button 間的空隙 */
+    float: left;
+    /* 消除邊框 */
+    outline-style: none;
+    border: 0px;
+    border-radius: 5px 0px 0px 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #757575;
+    padding: 15px;
+}
+
+.search {
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    padding: 8px 15px;
+    background: #448899;
+}
+
+.search img {
+    display: block;
+}
+
+.attraction {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* margin-bottom: 40px; */
+    margin-top: 40px;
+}
+
+.attraction ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.attraction li {
+    margin: 1.16%;
+    width: 22.5%;
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+    font-size: 16px;
+    /* line-height: 13px; */
+    color: #757575;
+}
+
+.attraction img {
+    /* display: block; */
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+    aspect-ratio: 322/202;
+}
+
+.attractionName {
+    font-weight: bold;
+    padding: 12px 10px 0px 10px;
+    /* 為了讓字 overflow */
+    white-space: nowrap;
+    overflow: hidden;
+    /* 變 ... */
+    text-overflow: ellipsis;
+}
+
+.category {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px 12px 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #757575;
+    height: 104px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 13px;
+    margin-top: 40px;
+}
+
+/* 小於等於 1200 */
+@media (max-width: 1200px) {
+    .navbar h1 {
+        margin: 10px;
+    }
+
+    .titleText {
+        padding-left: 5%;
+    }
+
+    .attraction {
+        width: 90%;
+    }
+
+    .attraction li {
+        width: 47%;
+    }
+
+    .backgroundPic {
+        background-image: url(/static/images/welcome-small.png);
+        background-position: right bottom;
+    }
+
+    .titleText {
+        height: 280px;
+    }
+}
+
+/* 小於等於 600 */
+@media (max-width: 600px) {
+	.attraction{
+		width: 90%;
+	}
+
+    .attraction li {
+        width: 100%;
+        margin: 0px 0px 15px 0px;
+    }
+
+    .titleText {
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .siteKeyword {
+        width: 230px;
+    }
+}
+
+
+
+
+
+
+
