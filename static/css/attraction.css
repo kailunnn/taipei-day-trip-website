@@ -1,0 +1,274 @@
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+
+nav {
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.attraction {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 40px 15px;
+    /* background-color: yellow; */
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.picSection {
+    width: 46.15%;
+    position: relative;
+    /* background-color: green; */
+    /* height: 406px; */
+}
+
+.bookSection {
+    width: 51.28%;
+    /* background-color: red; */
+}
+
+/* .pics {
+    width: 46.15%;
+    height: 406px;
+} */
+
+/* .pics {
+    display: flex;
+    align-items: center;
+} */
+
+.picSection img {
+    aspect-ratio: 540/406;
+    border-radius: 5px;
+}
+
+.picSection button {
+    border: none;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    top: 45.67%;
+}
+
+.left {
+    left: 1.85%;
+}
+
+.right {
+    right: 1.85%;
+} 
+
+.bookSection {
+    color: #666666;
+}
+
+.bookSection h1 {
+    font-weight: 700;
+    font-size: 24px;
+    padding: 6px 0px 3px 0px;
+    margin-bottom: 15px;
+    /* margin-bottom: 2.5%; */
+}
+
+.bookSection p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    /* margin-bottom: 3.4%; */
+}
+
+.book {
+    background: #E8E8E8;
+    border-radius: 5px;
+    padding: 15px 20px;
+}
+
+.book h2 {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 15px;
+    /* margin-bottom: 2.7%; */
+    line-height: 22px;
+} 
+
+.book p {
+    line-height: 24px;
+    margin-bottom: 15px;
+    /* margin-bottom: 2.7%; */
+}
+
+.book label {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.dateSection {
+    margin-bottom: 15px;
+    /* margin-bottom: 2.7%; */
+}
+
+.dateSection input {
+    width: 193px;
+    border: none;
+    padding: 5px 5px 5px 10px;
+    line-height:23px;
+}
+
+.timeSection {
+    margin-bottom: 15px;
+    /* margin-bottom: 2.7%; */
+}
+
+.timeSection .radioItem {
+    font-weight: normal;
+    /* position: relative;
+    padding-left: 22px;
+    background-color: red; */
+    margin-right: 18px;
+}
+
+/* radio button */
+form input[type="radio"] {
+    appearance: none; 
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    margin: 0;
+    position: relative;
+    top: 4px;
+}
+
+form input[type="radio"]:checked {
+    background: #448899;
+}
+
+.priceSection {
+    margin-bottom: 25px;
+    /* margin-bottom: 4.5%; */
+}
+
+.price{
+    margin-bottom: 0px;
+    display: inline;
+}
+
+.send {
+    border: none;
+    padding: 10px 20px;
+    background-color: #448899;
+    border-radius: 5px;
+    font-size: 19px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin-bottom: 36px;
+    /* margin-bottom: 7%; */
+}
+
+.detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* background-color: purple; */
+    margin-top: 50px;
+    color: #666666;
+    margin-bottom: 120px;
+    padding: 0px 10px;
+}
+
+.detail p {
+    line-height: 23px;
+    margin-bottom: 20px;
+}
+
+.detail h3 {
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #757575;
+    height: 104px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 13px;
+}
+
+/* @media (max-width: 1200px){
+    .navbar h1 {
+        margin-left: 10px;
+    }
+
+    .attraction {
+        align-items: center;
+    }
+
+    .bookSection h1 {
+        margin-bottom: 2%;
+    }
+
+    .bookSection p {
+        margin-bottom: 2.5%;
+    }
+
+    .picSection img {
+        aspect-ratio: 401/332;
+    } 
+
+    .send {
+        margin-bottom: 1.5%;
+    }
+} */
+
+@media (max-width: 1200px){
+    .navbar h1 {
+        margin-left: 10px;
+    }
+
+    .attraction {
+        flex-direction: column;
+        /* width: 100%; */
+        padding: 40px 0px;
+    }
+
+    .picSection {
+        width: 100%;
+        height:350px;
+    }
+
+    .picSection img {
+        width: 100%;
+        height: 100%;
+        /* aspect-ratio: 466/350; */
+    }
+
+    .bookSection {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .send {
+        margin-bottom: 25px;
+    }
+    
+    .detail {
+        margin-bottom: 110px;
+        padding: 0px 15px;
+    }
+
+    /* .bookSection h1 {
+        padding: 0px ;
+    } */
+}
+
+
+
+
+

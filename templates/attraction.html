@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/cssReset.css">
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/attraction.css">
+    <!-- 載入 noto sans tc -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+    </style>
+    <title>景點</title>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <h1>台北一日遊</h1>
+            <div class="navbar-right">
+                <a href="">預定行程</a>
+                <a href="">登入/註冊</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="attraction">
+        <div class="picSection">
+            <img src="https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg.webp" alt="">
+            <button class="left"><img src="../static/images/btn_leftArrow.png" alt=""></button>
+            <button class="right"><img src="../static/images/btn_rightArrow.png" alt=""></button>
+        </div>
+
+        <div class="bookSection">
+            <h1>平安鐘</h1>
+            <p>公共藝術 at 忠孝復興</p>
+            <form action="" class="book">
+                <h2>訂購導覽行程</h2>
+                <p>以此景點為中心的一日行程，帶您探索城市角落故事</p>
+                <div class="dateSection">
+                    <label for="date">選擇日期：</label>
+                    <input id="date" type="date">
+                </div>
+                <div class="timeSection">
+                    <label>選擇時間：</label>
+
+                    <input type="radio" id="morning" name="peroid" value="上半天" checked>
+                    <label class="radioItem" for="morning">上半天</label>
+
+                    <input type="radio" id="afternoon" name="peroid" value="下半天">
+                    <label class="radioItem" for="afternoon">下半天</label>
+                </div>
+                <div class="priceSection">
+                    <label for="price">導覽費用：</label>
+                    <p class="price">新台幣 2000 元</p>
+                </div>
+                <button class="send">開始預訂行程</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="detail">
+        <p>平安鐘祈求大家的平安，這是為了紀念921地震週年的設計，在喧鬧的廣場上每個小時鳴鐘，保佑平安，祈禱臺灣不會再發生這樣的天災。雙手合十加上108個黃色的琉璃乳丁，隨著緩緩流下的水，在底下的一個小噴泉噴出。雙手合十的意義，一個是祈福，一個是包容，教我們要包容這樣的改變，撫平這樣的傷口。下面的水緩緩流出，代表著人的生命力是不斷地延續下去。緩緩地鐘聲，卻帶來心中的寧靜。 這個平安鐘是由建築師姚仁喜與琉璃創作家王俠軍共同設計，長6公尺、寬5公尺，以鑄銅製成，由法鼓山文教基金會全額出資。平安鐘點綴都市景觀，不時提醒大家，面對刻骨銘心的災難痛苦，更應該有謙卑的一顆心。</p>
+        <h3>景點地址：</h3>
+        <p>臺北市 大安區忠孝東路4段</p>
+        <h3>交通方式：</h3>
+        <p>捷運站名：忠孝復興站4號出口1.公車：204、212、212直、232、232副、262、262(區間)、278、299、521、605、605(副)、605(新台五線)、667、903、忠孝新幹線至頂好市場站 2.車位：太平洋崇光百貨地下停車場或市民大道附近地下停車場</p>
+    </div>
+
+    <div class="footer">
+        <p>COPYRIGHT © 2021 台北一日遊</p>
+    </div>
+
+    <script src="../static/javascript/attraction.js"></script>
+</body>
+</html>
