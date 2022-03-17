@@ -12,38 +12,49 @@ nav {
     max-width: 1200px;
     margin: 0px auto;
     padding: 40px 15px;
-    /* background-color: yellow; */
     border-bottom: 1px solid #E8E8E8;
 }
 
 .picSection {
     width: 46.15%;
     position: relative;
-    /* background-color: green; */
-    /* height: 406px; */
 }
 
 .bookSection {
     width: 51.28%;
-    /* background-color: red; */
 }
 
-/* .pics {
-    width: 46.15%;
-    height: 406px;
-} */
+.slides {
+    width: 100%;
+}
 
-/* .pics {
-    display: flex;
-    align-items: center;
-} */
-
-.picSection img {
+.slides .pic {
+    width: 100%;
     aspect-ratio: 540/406;
     border-radius: 5px;
+    /* 初始 */
+    display: none;
 }
 
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
 .picSection button {
+    cursor: pointer;
     border: none;
     padding: 0;
     width: 36px;
@@ -59,25 +70,51 @@ nav {
 
 .right {
     right: 1.85%;
-} 
+}
+
+.dots {
+    /* background-color: red; */
+    text-align: center;
+    position: absolute;
+    bottom: 8%;
+    left: 0;
+    right: 0;
+    /* left: 50%; */
+    /* 將元素往回移自身的 50% 距離 */
+    /* translate(-50%, -50%) -> (X,Y) 達到水平垂直置中*/
+    /* transform: translate(-50%, 0%) */
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
 
 .bookSection {
     color: #666666;
 }
 
-.bookSection h1 {
+.title {
     font-weight: 700;
     font-size: 24px;
     padding: 6px 0px 3px 0px;
     margin-bottom: 15px;
-    /* margin-bottom: 2.5%; */
 }
 
-.bookSection p {
+.category {
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 20px;
-    /* margin-bottom: 3.4%; */
 }
 
 .book {
@@ -90,14 +127,12 @@ nav {
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 15px;
-    /* margin-bottom: 2.7%; */
     line-height: 22px;
 } 
 
 .book p {
     line-height: 24px;
     margin-bottom: 15px;
-    /* margin-bottom: 2.7%; */
 }
 
 .book label {
@@ -107,7 +142,6 @@ nav {
 
 .dateSection {
     margin-bottom: 15px;
-    /* margin-bottom: 2.7%; */
 }
 
 .dateSection input {
@@ -119,19 +153,16 @@ nav {
 
 .timeSection {
     margin-bottom: 15px;
-    /* margin-bottom: 2.7%; */
 }
 
 .timeSection .radioItem {
     font-weight: normal;
-    /* position: relative;
-    padding-left: 22px;
-    background-color: red; */
     margin-right: 18px;
 }
 
 /* radio button */
 form input[type="radio"] {
+    cursor: pointer;
     appearance: none; 
     width: 22px;
     height: 22px;
@@ -148,7 +179,6 @@ form input[type="radio"]:checked {
 
 .priceSection {
     margin-bottom: 25px;
-    /* margin-bottom: 4.5%; */
 }
 
 .price{
@@ -165,13 +195,11 @@ form input[type="radio"]:checked {
     line-height: 16px;
     color: #FFFFFF;
     margin-bottom: 36px;
-    /* margin-bottom: 7%; */
 }
 
 .detail {
     max-width: 1200px;
     margin: 0 auto;
-    /* background-color: purple; */
     margin-top: 50px;
     color: #666666;
     margin-bottom: 120px;
@@ -233,18 +261,21 @@ form input[type="radio"]:checked {
 
     .attraction {
         flex-direction: column;
-        /* width: 100%; */
         padding: 40px 0px;
     }
 
     .picSection {
         width: 100%;
+    }
+
+    .slides {
         height:350px;
     }
 
-    .picSection img {
+    .slides .pic {
         width: 100%;
         height: 100%;
+        border-radius: 0;
         /* aspect-ratio: 466/350; */
     }
 
@@ -262,11 +293,8 @@ form input[type="radio"]:checked {
         margin-bottom: 110px;
         padding: 0px 15px;
     }
-
-    /* .bookSection h1 {
-        padding: 0px ;
-    } */
 }
+
 
 
 
