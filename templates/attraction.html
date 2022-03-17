@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/cssReset.css">
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/attraction.css">
+    <!-- 載入 noto sans tc -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            padding-top: 55px;
+        }
+    </style>
+    <title>景點</title>
+</head>
+<body>
+    <nav class="sticky">
+        <div class="navbar">
+            <h1>台北一日遊</h1>
+            <div class="navbar-right">
+                <a href="">預定行程</a>
+                <a href="">登入/註冊</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="attraction">
+        <div class="picSection">
+            <!-- 景點圖片 -->
+            <div class="slides">
+                <!-- <img class="pic" src="https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg.webp" alt="景點"> -->
+            </div>
+            <!-- 上一張、下一張按鈕 -->
+            <button class="left" onclick="plusSlides(-1)"><img src="../static/images/btn_leftArrow.png" alt=""></button>
+            <button class="right" onclick="plusSlides(1)"><img src="../static/images/btn_rightArrow.png" alt=""></button>
+            <!-- 下面的圈圈 -->
+            <div class="dots">
+                <!-- <span class="dot" onclick="currentSlide(1)"></span> -->
+            </div>
+        </div>
+
+        <div class="bookSection">
+            <h1 class="title"></h1>
+            <p class="category"></p>
+            <form action="" class="book">
+                <h2>訂購導覽行程</h2>
+                <p>以此景點為中心的一日行程，帶您探索城市角落故事</p>
+                <div class="dateSection">
+                    <label for="date">選擇日期：</label>
+                    <input id="date" type="date">
+                </div>
+                <div class="timeSection">
+                    <label>選擇時間：</label>
+
+                    <input type="radio" id="morning" name="peroid" value="上半天" checked>
+                    <label class="radioItem" for="morning">上半天</label>
+
+                    <input type="radio" id="afternoon" name="peroid" value="下半天">
+                    <label class="radioItem" for="afternoon">下半天</label>
+                </div>
+                <div class="priceSection">
+                    <label for="price">導覽費用：</label>
+                    <p class="price">新台幣 2000 元</p>
+                </div>
+                <button class="send">開始預訂行程</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="detail">
+        <p class="description"></p>
+        <h3>景點地址：</h3>
+        <p class="address"></p>
+        <h3>交通方式：</h3>
+        <p class="transport"></p>
+    </div>
+
+    <div class="footer">
+        <p>COPYRIGHT © 2021 台北一日遊</p>
+    </div>
+
+    <script src="../static/javascript/attraction.js"></script>
+</body>
+</html>

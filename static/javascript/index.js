@@ -9,11 +9,12 @@ let nextPage = 0;
 let keyword = "";
 
 getInfiniteData();
-window.addEventListener("scroll", sticky);
+window.addEventListener("scroll", infiniteLoad);
+window.addEventListener("scroll", navFixed);
 searchBtn.addEventListener("click", searchAttraction);
 
 // 固定 navbar
-function sticky(){
+function navFixed(){
     // 父元素到元素頂端的距離
     let navTop = nav.offsetTop;
     if(window.scrollY > navTop){
@@ -24,8 +25,10 @@ function sticky(){
         nav.classList.remove("sticky");
         document.body.style.paddingTop = 0;
     }
+}
 
-    // 自動載入下一頁
+// 自動載入下一頁
+function infiniteLoad(){
     const {top} = footer.getBoundingClientRect();
     // footer 頂端已進入畫面
     if(top <= window.innerHeight){
@@ -84,14 +87,20 @@ function renderPicture(result){
         image = datas[i].images[0];
         
         let li = document.createElement("li");
-        let pic = li.appendChild(document.createElement("img"));
+
+        let detail = li.appendChild(document.createElement("a"));
+        detail.setAttribute("data-id", datas[i].id);
+        detail.setAttribute("class", "showDetail");
+        detail.setAttribute("href", `/attraction/${datas[i].id}`);
+
+        let pic = detail.appendChild(document.createElement("img"));
         pic.setAttribute("src", image);
 
-        let title = li.appendChild(document.createElement("p"));
+        let title = detail.appendChild(document.createElement("p"));
         title.setAttribute("class", "attractionName");
         title.append(document.createTextNode(datas[i].name));
 
-        let category = li.appendChild(document.createElement("div"));
+        let category = detail.appendChild(document.createElement("div"));
         category.setAttribute("class","category");
         mrt = category.appendChild(document.createElement("p"));
         mrt.append(document.createTextNode(datas[i].mrt));
