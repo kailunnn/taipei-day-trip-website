@@ -24,7 +24,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 54px;
-    /* background-color: #fff; */
 }
 
 .navbar h1 {
@@ -36,6 +35,7 @@ nav {
 }
 
 .navbar-right {
+    width: 175px;
     display: flex;
     font-size: 16px;
     /* line-height: 13px; */
@@ -51,7 +51,7 @@ nav {
     color: #404040;
 }
 
-.signOut {
+.signOut, .signInUp {
     display: none;
 }
 
