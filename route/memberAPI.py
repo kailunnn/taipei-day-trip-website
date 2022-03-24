@@ -37,7 +37,7 @@ def memberStatus():
                 "error": True,
                 "message": "此帳號已被註冊"
             }
-        elif( result == None):
+        elif(result == None):
             try:
                 db = cnx.cnxpool.get_connection()
                 cursor = db.cursor()
@@ -45,6 +45,7 @@ def memberStatus():
                 insertValue = (name, email, password)
                 cursor.execute(insertSql, insertValue)
                 db.commit()
+                # session["userEmail"] = email
             except Error as e:
                 print(e)
             finally:
@@ -53,7 +54,6 @@ def memberStatus():
                 cursor.close()
                 db.close()
             
-            session["userEmail"] = result[2]
             data = {"ok": True}
         else:
             data = {

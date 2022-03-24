@@ -49,6 +49,7 @@
 }
 
 .search {
+    cursor: pointer;
     border-radius: 0px 5px 5px 0px;
     border: none;
     padding: 8px 15px;

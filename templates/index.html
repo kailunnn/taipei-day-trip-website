@@ -19,15 +19,46 @@
     <title>首頁</title>
 </head>
 <body>
-    <nav>
+    <nav class="sticky">
         <div class="navbar">
             <h1>台北一日遊</h1>
             <div class="navbar-right">
-                <a href="">預定行程</a>
-                <a href="">登入/註冊</a>
+                <a class="schedule" href="javascript:void(0);">預定行程</a>
+                <a class="signInUp" href="javascript:void(0);">登入/註冊</a>
+                <a class="signOut" href="javascript:void(0);">登出系統</a>
+
+                <div class="modalBox">
+
+                    <div class="modalContent signInSection">
+                        <div class="line"></div>
+                        <span class="close">&times;</span>
+                        <h2>登入會員帳號</h2>
+                        <input type="text" class="email" placeholder="輸入電子信箱">
+                        <input type="text" class="password" placeholder="輸入密碼">
+                        <button class="signBtn signinBtn">登入帳戶</button>
+                        <span class="errorMsg"></span>
+                        <span class="link createAccount">還沒有帳戶？點此註冊</span>
+                    </div>
+
+                    <div class="modalContent signUpSection">
+                        <div class="line"></div>
+                        <span class="close">&times;</span>
+                        <h2>註冊會員帳號</h2>
+                        <input type="text" class="name" placeholder="輸入姓名">
+                        <input type="text" class="email" placeholder="輸入電子郵件">
+                        <input type="text" class="password" placeholder="輸入密碼">
+                        <button class="signBtn signupBtn">註冊新帳戶</button>
+                        <span class="errorMsg msg"></span>
+                        <span class="link loginAccount">已經有帳戶了？點此登入</span>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </nav>
+
+
     
     <div class="header">
         <div class="backgroundPic">
