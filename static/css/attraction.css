@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-nav {
-    border-bottom: 1px solid #E8E8E8;
-}
-
 .attraction {
     display: flex;
     justify-content: space-between;

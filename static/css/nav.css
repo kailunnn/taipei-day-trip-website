@@ -1,5 +1,20 @@
+body {
+    padding-top: 55px;
+}
+
 nav {
     background-color: #fff;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.sticky { 
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    /* 以防寬度跑掉 */
+    /* width: 100%; */
+    left: 0;
+    right: 0;
 }
 
 .navbar {
@@ -9,7 +24,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 54px;
-    /* background-color: #fff; */
 }
 
 .navbar h1 {
@@ -21,9 +35,10 @@ nav {
 }
 
 .navbar-right {
+    width: 175px;
     display: flex;
     font-size: 16px;
-    line-height: 13px;
+    /* line-height: 13px; */
 }
 
 .navbar-right a {
@@ -32,12 +47,121 @@ nav {
     margin: 10px;
 }
 
-.sticky { 
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    /* 以防寬度跑掉 */
-    /* width: 100%; */
-    left: 0;
-    right: 0;
+.navbar-right a:hover, .navbar-right a:active {
+    color: #404040;
 }
+
+.signOut, .signInUp {
+    display: none;
+}
+
+.modalBox {
+    /* default */
+    display: none; 
+    position: fixed; 
+    z-index: 2; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    /* Enable scroll if needed */
+    /* overflow: auto; */
+    background-color: rgba(0,0,0,0.25); 
+    color: #666666;
+}
+
+.modalContent {
+    background-color: #ffffff;
+    margin: 80px auto;
+    width: 340px;
+    border-radius: 6px;
+    position: relative;
+
+    /* animation-name: animateModal;
+    animation-duration: 0.4s */
+}
+
+/* @keyframes animateModal {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  } */
+
+.close {
+    position: absolute;
+    right: 17px;
+    top: 27px;
+    color: #aaa;
+    font-size: 16px;
+    font-weight: bold;
+    /* background-color: red; */
+}
+
+.close:hover, .close:focus, .link:hover, .link:focus {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.line {
+    height: 10px;
+    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+    margin-bottom: 15px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.modalContent h2 {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.modalContent input, .modalContent button {
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+}
+
+.modalContent input {
+    width: 280px;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px solid #CCCCCC;
+}
+
+.signBtn {
+    cursor: pointer;
+    background: #448899;
+    font-size: 19px;
+    line-height: 27px;
+    padding: 10px 117px;
+    border: none;
+    color: #FFFFFF;
+}
+
+.errorMsg {
+    display: block;
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.link {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 15px 15px 15px;
+    text-align: center;
+    /* background-color: red; */
+    width: 310px;
+}
+
+.signupBtn {
+    padding: 10px 107.5px;
+}
+
+.signUpSection {
+    display: none;
+}
+
+
+
