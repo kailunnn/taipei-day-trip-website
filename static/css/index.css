@@ -66,6 +66,10 @@
     color: #757575;
 }
 
+.showDetail:hover {
+    opacity: 0.8;
+}
+
 .attraction {
     max-width: 1200px;
     margin: 0 auto;
