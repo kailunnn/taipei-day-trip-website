@@ -50,3 +50,7 @@ img{
 	  vertical-align: middle; 
       object-fit: cover;
 }
+
+*,*:before,*:after{
+    box-sizing: border-box;
+}
