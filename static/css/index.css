@@ -35,7 +35,7 @@
 }
 
 .siteKeyword {
-    width: 370px;
+    width: 400px;
     /* 消除與 button 間的空隙 */
     float: left;
     /* 消除邊框 */
@@ -79,13 +79,11 @@
 }
 
 .attraction li {
-    margin: 1.16%;
+    margin: 1.25%;
     width: 22.5%;
     border: 1px solid #E8E8E8;
     border-radius: 5px;
     font-size: 16px;
-    /* line-height: 13px; */
-    /* color: #757575; */
 }
 
 .attraction img {
