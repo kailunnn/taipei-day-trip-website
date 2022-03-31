@@ -97,12 +97,11 @@ def booking():
     elif request.method == 'GET':
         
         try:
-            
             # 如果有預定行程
             if(hasOrdered):
                 # 處理日期格式
                 dateFormate = hasOrdered[3].strftime("%Y-%m-%d")
-                
+
                 attractionId = hasOrdered[2]
                 attractionInfo = sqlOperate("SELECT * FROM `attractions` WHERE `id` = %s", (attractionId,), "READ")
                 # 處理圖片
@@ -142,6 +141,7 @@ def booking():
 
         return jsonify(data),code
 
+    # 刪除預定行程
     elif request.method == 'DELETE':
 
         try:
