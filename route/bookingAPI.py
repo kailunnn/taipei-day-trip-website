@@ -144,7 +144,6 @@ def booking():
 
         try:
             deleteOrder = sqlOperate("DELETE FROM `orders` WHERE `memberId` = %s", (memberId,), "DELETE")
-            print(deleteOrder)
             if(deleteOrder == "success"): 
                 code = 200
                 data = {"ok": True}
