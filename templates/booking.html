@@ -23,19 +23,20 @@
 
     <div class="content">
 
+        <h2 class="itinerary-username">您好，<span></span>，待預訂的行程如下：</h2>
+
         <div class="itinerary">
-            <h2>您好，<span>Yakko</span>，待預訂的行程如下：</h2>
             <div class="itinerary-info">
                 <div class="site-pic">
-                    <img  src="https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg.webp" alt="">
+                    <img alt="">
                 </div>
                 <div class="itinerary-detail">
-                    <button class="deleteBtn"><img src="../static/images/icon_delete.png" alt=""></button>
-                    <h3 class="itinerary-name">台北一日遊：<span>平安鐘</span></h3>
-                    <label class="itinerary-label">日期：<span>2021-04-23</span></label>
-                    <label class="itinerary-label">時間：<span>早上 9 點到下午 4 點</span></label>
-                    <label class="itinerary-label">費用：<span>新台幣 2000 元</span></label>
-                    <label class="itinerary-label place">地點：<span>臺北市 大安區忠孝東路4段</span></label>
+                    <button class="deleteBtn" onclick="deleteSchedule()"><img src="../static/images/icon_delete.png" alt=""></button>
+                    <h3 class="itinerary-name">台北一日遊：<span></span></h3>
+                    <label class="itinerary-label">日期：<span class="itinerary-date"></span></label>
+                    <label class="itinerary-label">時間：<span class="itinerary-time"></span></label>
+                    <label class="itinerary-label">費用：<span class="itinerary-price"></span></label>
+                    <label class="itinerary-label place">地點：<span class="itinerary-location"></span></label>
                 </div>
             </div>
         </div>
@@ -66,9 +67,6 @@
     <div class="footer">
         <p>COPYRIGHT © 2021 台北一日遊</p>
     </div>
-
-
-
 
 
     <script src="../static/javascript/nav.js"></script>
