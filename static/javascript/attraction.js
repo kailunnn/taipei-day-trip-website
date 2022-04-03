@@ -3,9 +3,52 @@ let passPath = (window.location.pathname);
 let id = passPath.substring(12);
 let data;
 let slideIndex = 1;
-
+let checkedPrice = 2000;
+let checkedTime = "morning";
 
 getData(id);
+
+// 點選開始預定行程按鈕
+function pressSend(){
+    const date = document.querySelector("#date");
+    if(date.value === ""){
+        console.log("輸入不完整")
+    }else{
+        let requestData = {
+            "attractionId": id,
+            "date": date.value,
+            "time": checkedTime,
+            "price": checkedPrice
+        }
+
+        const url = "/api/booking";
+        fetch(url,{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData),
+        })
+        .then( response => response.json())
+        .then( data => sendSchedule(data))
+        .catch( error => console.error(error))
+    }
+
+}
+
+// 判斷預定行程按鈕的登入與跳轉頁面
+function sendSchedule(data){
+    console.log(data)
+    // 若是未登入
+    if('error' in data){
+        if(data.message === "未登入系統，拒絕存取"){
+            modalBox.style.display = "block";
+        }
+    // 若是已經登入，則跳轉到 booking 頁面
+    }else if('ok' in data){
+        window.location = "/booking";
+    }
+}
 
 // 監聽 radioBtn 改變顯示價格
 const radioBtn = document.querySelectorAll('input[name=peroid]');
@@ -15,10 +58,13 @@ function onChange(){
     let price = document.querySelector(".price");
     if(checked == "上半天"){
         price.textContent = "新台幣 2000 元";
+        checkedTime = "morning";
+        checkedPrice = 2000;
     }else if(checked=="下半天"){
         price.textContent = "新台幣 2500 元";
+        checkedTime = "afternoon";
+        checkedPrice = 2500;
     }
-    // console.log(checked)
 }
 
 // 取得景點資料
@@ -40,7 +86,6 @@ function renderData(data){
     let pics = data.images;
     const slides = document.querySelector(".slides");
     pics.forEach((pic)=>{
-        console.log(pic)
         let image = document.createElement("img");
         image.setAttribute("class", "pic fade");
         image.setAttribute("src", pic);
@@ -72,7 +117,7 @@ function renderData(data){
     const transport = document.querySelector(".transport");
     transport.append(document.createTextNode(data.transport));
 
-    console.log(data)
+    // console.log(data)
     showSlides(slideIndex);
 }
 

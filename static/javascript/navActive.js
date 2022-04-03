@@ -1,3 +1,7 @@
+// 記錄使用者登入的帳號
+// let inOrOutStatus 
+// console.log(inOrOutStatus)
+// 登入/註冊 共同區塊
 const modalBox = document.querySelector(".modalBox");
 const signInUp = document.querySelector(".signInUp");
 const signOut = document.querySelector(".signOut");
@@ -14,8 +18,34 @@ const loginAccount = document.querySelector(".loginAccount");
 const signupBtn = document.querySelector(".signupBtn");
 const signupInput = document.querySelectorAll(".signUpSection input");
 const msg = document.querySelector(".signUpSection .msg");
+// 預定行程
+// const schedule = document.querySelector(".schedule")
 
 getStatus();
+
+// 點選 navbar 上的預定行程按鈕 fetch get api
+function getScheduleApi(){
+    const url = "/api/booking";
+    fetch(url)
+    .then( response => response.json())
+    .then( data => islogin(data))
+    .catch( error => console.error(error))
+}
+
+// 點選預定行程
+function islogin(data){
+    // console.log(data)
+    // 若是未登入
+    if( 'error' in data){
+        if(data.message === "未登入系統，拒絕存取"){
+            modalBox.style.display = "block";
+        }
+    // 若是已經登入，則跳轉到 booking 頁面
+    }else{
+        window.location = "/booking";
+    }
+    
+}
 
 // 查看使用者狀態
 function getStatus(){
@@ -28,7 +58,8 @@ function getStatus(){
 
 // 判斷該顯示 登入/註冊 或者 登出系統
 function showInOrOut(status){
-    // console.log(status)
+    // inOrOutStatus = status.data
+    // console.log(inOrOutStatus)
     if(status.data !== null){
         signInUp.style.display = "none";
         signOut.style.display = "block";

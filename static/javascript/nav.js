@@ -15,6 +15,7 @@ html_navbarRight.setAttribute("class", "navbar-right");
 let html_schedule = html_navbarRight.appendChild(document.createElement("a"));
 html_schedule.setAttribute("class", "schedule");
 html_schedule.setAttribute("href", "javascript:void(0);");
+html_schedule.setAttribute("onclick", "getScheduleApi()");
 html_schedule.append(document.createTextNode("預定行程"));
 
 let html_signInUp = html_navbarRight.appendChild(document.createElement("a"));
