@@ -4,6 +4,13 @@
     color: #666666;
 }
 
+.noBooking {
+    display: block;
+    max-width: 980px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
 .itinerary, .contact, .creditCard, .surePay{
     max-width: 1200px;
     margin: 0px auto; 
@@ -14,10 +21,19 @@
     border-top: 1px solid #E8E8E8;
 }
 
-.itinerary > h2 {
+.itinerary{
+    /* max-width: 1200px;
+    margin: 0px auto;  */
+    padding-top: 0px;
+}
+
+.itinerary-username {
+    max-width: 980px;
+    margin: 40px auto 35px auto;
+    /* margin-top: 40px;
+    margin-bottom: 35px; */
     font-weight: 700; 
     font-size: 19px;
-    margin-bottom: 35px;
 }
 
 .itinerary-info {
@@ -60,6 +76,7 @@
     font-weight: 700;
     color: #448899;
     margin: 5px 0px 30px 0px;
+    line-height: 23px;
 }
 
 .itinerary-label {
@@ -142,6 +159,10 @@
         max-width: 980px;
         padding: 45px 0px;
     } 
+
+    .itinerary {
+        padding-top: 0px;
+    }
 
     .site-pic {
         min-width: 250px;
