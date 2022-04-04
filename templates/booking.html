@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/cssReset.css">
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/booking.css">
+    <!-- 載入 noto sans tc -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+    </style>
+    <title>預定行程</title>
+</head>
+<body>
+    <nav class="sticky"></nav>
+
+    <div class="content">
+
+        <h2 class="itinerary-username">您好，<span></span>，待預訂的行程如下：</h2>
+
+        <div class="itinerary">
+            <div class="itinerary-info">
+                <div class="site-pic">
+                    <img alt="">
+                </div>
+                <div class="itinerary-detail">
+                    <button class="deleteBtn" onclick="deleteSchedule()"><img src="../static/images/icon_delete.png" alt=""></button>
+                    <h3 class="itinerary-name">台北一日遊：<span></span></h3>
+                    <label class="itinerary-label">日期：<span class="itinerary-date"></span></label>
+                    <label class="itinerary-label">時間：<span class="itinerary-time"></span></label>
+                    <label class="itinerary-label">費用：<span class="itinerary-price"></span></label>
+                    <label class="itinerary-label place">地點：<span class="itinerary-location"></span></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-layout contact">
+            <h3>您的聯絡資訊</h3>
+            <label>聯絡姓名：<input type="text" placeholder="Yakko"></label>
+            <label>連絡信箱：<input type="text" placeholder="imyakkowu@gmail.com"></label>
+            <label>手機號碼：<input type="text" ></label>
+            <p>請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</p>
+        </div>
+        
+        <div class="info-layout creditCard">
+            <h3>信用卡付款資訊</h3>
+            <label>卡片號碼：<input type="text" placeholder="**** **** **** ****"></label>
+            <label>過期時間：<input type="text" placeholder="MM / YY"></label>
+            <label>驗證密碼：<input type="text" placeholder="CVV" maxlength="3"></label>
+         </div>
+        
+        <div class="info-layout surePay">
+            <p>總價：新台幣 <span>2000</span> 元</p>
+            <button class="sureBtn">確認訂購並付款</button>
+        </div>
+        
+        
+    </div>
+
+    <div class="footer">
+        <p>COPYRIGHT © 2021 台北一日遊</p>
+    </div>
+
+
+    <script src="../static/javascript/nav.js"></script>
+    <script src="../static/javascript/navActive.js"></script>
+    <script src="../static/javascript/booking.js"></script>
+</body>
+</html>

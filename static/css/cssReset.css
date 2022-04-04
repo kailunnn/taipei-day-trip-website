@@ -50,3 +50,22 @@ img{
 	  vertical-align: middle; 
       object-fit: cover;
 }
+
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+
+/* html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	grid-template-columns: 1fr;
+}
+
+.footer {
+	grid-row-start: 2;
+	grid-row-end: 3;
+} */
