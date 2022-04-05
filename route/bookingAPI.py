@@ -50,7 +50,7 @@ def booking():
     memberInfo = sqlOperate("SELECT * FROM `member` WHERE `email` = %s", (userEmail,), "READ")
     memberId = memberInfo[0]
     # 判斷該 member 是否已有預定行程
-    hasOrdered = sqlOperate("SELECT * FROM `orders` WHERE `memberId` = %s", (memberId,), "READ")
+    hasOrdered = sqlOperate("SELECT * FROM `carts` WHERE `memberId` = %s", (memberId,), "READ")
     # (2, 3, 20, datetime.date(2022, 1, 31), 'afternoon', 2500)
 
     
@@ -64,12 +64,12 @@ def booking():
             price = json.loads(request.get_data())["price"]
             # 如果已有訂單，則更改為新的預定行程
             if(hasOrdered):
-                sql = "UPDATE `orders` SET `attractionId`= %s, `date`= %s, `time`= %s, `price`= %s WHERE `memberId`= %s"
+                sql = "UPDATE `carts` SET `attractionId`= %s, `date`= %s, `time`= %s, `price`= %s WHERE `memberId`= %s"
                 value = (attractionId, date, time, price, memberId)
                 action = "UPDATE"
             # 如果沒有則新增新的預定行程      
             elif(hasOrdered ==  None):
-                sql = "INSERT INTO `orders` (memberId, attractionId, date, time, price) VALUES (%s, %s, %s, %s, %s)"
+                sql = "INSERT INTO `carts` (memberId, attractionId, date, time, price) VALUES (%s, %s, %s, %s, %s)"
                 value = (memberId, attractionId, date, time, price)
                 action = "CREATE"
         
@@ -145,7 +145,7 @@ def booking():
     elif request.method == 'DELETE':
 
         try:
-            deleteOrder = sqlOperate("DELETE FROM `orders` WHERE `memberId` = %s", (memberId,), "DELETE")
+            deleteOrder = sqlOperate("DELETE FROM `carts` WHERE `memberId` = %s", (memberId,), "DELETE")
             if(deleteOrder == "success"): 
                 code = 200
                 data = {"ok": True}
