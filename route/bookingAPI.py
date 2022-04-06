@@ -50,7 +50,7 @@ def booking():
     memberInfo = sqlOperate("SELECT * FROM `member` WHERE `email` = %s", (userEmail,), "READ")
     memberId = memberInfo[0]
     # 判斷該 member 是否已有預定行程
-    hasOrdered = sqlOperate("SELECT * FROM `carts` WHERE `memberId` = %s", (memberId,), "READ")
+    hasCart = sqlOperate("SELECT * FROM `carts` WHERE `memberId` = %s", (memberId,), "READ")
     # (2, 3, 20, datetime.date(2022, 1, 31), 'afternoon', 2500)
 
     
@@ -63,12 +63,12 @@ def booking():
             time = json.loads(request.get_data())["time"]
             price = json.loads(request.get_data())["price"]
             # 如果已有訂單，則更改為新的預定行程
-            if(hasOrdered):
+            if(hasCart):
                 sql = "UPDATE `carts` SET `attractionId`= %s, `date`= %s, `time`= %s, `price`= %s WHERE `memberId`= %s"
                 value = (attractionId, date, time, price, memberId)
                 action = "UPDATE"
             # 如果沒有則新增新的預定行程      
-            elif(hasOrdered ==  None):
+            elif(hasCart ==  None):
                 sql = "INSERT INTO `carts` (memberId, attractionId, date, time, price) VALUES (%s, %s, %s, %s, %s)"
                 value = (memberId, attractionId, date, time, price)
                 action = "CREATE"
@@ -98,11 +98,11 @@ def booking():
         
         try:
             # 如果有預定行程
-            if(hasOrdered):
+            if(hasCart):
                 # 處理日期格式
-                dateFormate = hasOrdered[3].strftime("%Y-%m-%d")
+                dateFormate = hasCart[3].strftime("%Y-%m-%d")
 
-                attractionId = hasOrdered[2]
+                attractionId = hasCart[2]
                 attractionInfo = sqlOperate("SELECT * FROM `attractions` WHERE `id` = %s", (attractionId,), "READ")
                 # 處理圖片
                 images = []
@@ -122,8 +122,8 @@ def booking():
                             "image": images[0]
                         },
                         "date": dateFormate,
-                        "time": hasOrdered[4],
-                        "price": hasOrdered[5]
+                        "time": hasCart[4],
+                        "price": hasCart[5]
                     }
                 }
 
@@ -145,8 +145,8 @@ def booking():
     elif request.method == 'DELETE':
 
         try:
-            deleteOrder = sqlOperate("DELETE FROM `carts` WHERE `memberId` = %s", (memberId,), "DELETE")
-            if(deleteOrder == "success"): 
+            deleteCart = sqlOperate("DELETE FROM `carts` WHERE `memberId` = %s", (memberId,), "DELETE")
+            if(deleteCart == "success"): 
                 code = 200
                 data = {"ok": True}
         except Error as e:
