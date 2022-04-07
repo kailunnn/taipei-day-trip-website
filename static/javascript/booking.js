@@ -1,4 +1,5 @@
 getState()
+let attractionId;
 
 function getState(){
     const url = "/api/user";
@@ -17,6 +18,11 @@ function takeState(data){
         // {data: {email: 'red@gmail.com', id: 1, name: '小紅'}
         const name = document.querySelector(".itinerary-username span");
         name.append(document.createTextNode(data.data.name));
+
+        const contactName = document.querySelector(".contact-name");
+        contactName.setAttribute("value", data.data.name);
+        const contactEmail = document.querySelector(".contact-email");
+        contactEmail.setAttribute("value", data.data.email);
     }
 }
 
@@ -30,10 +36,9 @@ function getBookingData(){
 
 // 渲染預定行程
 function renderBooking(data){
-    let itineraryData = data.data
-    console.log(itineraryData)
+    let itineraryData = data.data;
 
-    // 沒有有預定行程
+    // 沒有預定行程
     if(itineraryData === null){
         const content = document.querySelector(".content");
         const itinerary = document.querySelector(".itinerary");
@@ -57,7 +62,7 @@ function renderBooking(data){
 
     // 有預定行程
     }else{
-    
+        attractionId = itineraryData.attraction.id;
         // 判斷時間
         let timePeriod;
         if(itineraryData.time === "morning"){
@@ -77,11 +82,14 @@ function renderBooking(data){
         const itineraryTime = document.querySelector(".itinerary-time");
         itineraryTime.append(document.createTextNode(timePeriod));
 
-        const itineraryPrice = document.querySelector(".itinerary-price");
-        itineraryPrice.append(document.createTextNode(`新台幣 ${itineraryData.price} 元`));
+        const itineraryPrice = document.querySelectorAll(".itinerary-price");
+        itineraryPrice.forEach((element)=>{
+            element.append(document.createTextNode(itineraryData.price));
+        })
 
         const itineraryLocation = document.querySelector(".itinerary-location");
         itineraryLocation.append(document.createTextNode(itineraryData.attraction.address));
+
     }
 }
 
