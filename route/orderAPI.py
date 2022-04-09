@@ -120,7 +120,7 @@ def orders():
             tappayRequest = req.Request(
                 tappayUrl, 
                 headers = tappayHeaders, 
-                data=json.dumps(requestData).encode('utf-8')
+                data = json.dumps(requestData).encode('utf-8')
             )
 
             with req.urlopen(tappayRequest) as response:
