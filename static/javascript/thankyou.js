@@ -13,7 +13,6 @@ function getOrder(trackingNumber){
 }
 
 function renderThankyou(data){
-    console.log(data)
     if(!('error' in data)){
         let status = data.data.status;
 

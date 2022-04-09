@@ -91,11 +91,10 @@ function sendPrimeToOrderAPI(prime){
           }
         }
     }
-    // console.log(data)
 
-    const url = "/api/orders"
+    const url = "/api/orders";
     fetch(url,{
-        method: 'POST',
+        method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
@@ -106,8 +105,6 @@ function sendPrimeToOrderAPI(prime){
     .catch( error => console.error(error))
 }
 
-let trackigMessage;
-let trackigStatus;
 // 取得訂單編號後，導向感謝頁面
 function getOrderNumber(data){
     let trackingNumber = data.data.number;

@@ -42,7 +42,6 @@ def orders():
     # 檢查是否登入
     if "userEmail" in session:
         userEmail = session["userEmail"]
-        return userEmail
     else:
         data = {
             "error": True,
@@ -171,14 +170,13 @@ def order(orderNumber):
     # 檢查是否登入
     if "userEmail" in session:
         userEmail = session["userEmail"]
-        return userEmail
     else:
         data = {
             "error": True,
             "message": "未登入系統，拒絕存取"
         }
         return jsonify(data),403
-        
+
     # 找到 member 資料
     memberInfo = sqlOperate("SELECT * FROM `member` WHERE `email` = %s", (userEmail,), "READ")
     memberId = memberInfo[0]
