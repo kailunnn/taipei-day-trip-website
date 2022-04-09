@@ -1,6 +1,14 @@
 getState()
 let attractionId;
 
+// loading
+// function isLoading(show) {
+//     const loadEffect = document.querySelector('.loadEffect');
+//     show ? loadEffect.classList.add('loader') : loadEffect.classList.remove('loader');
+//     const content = document.querySelector('.content');
+//     show ? content.style.display = "none" : content.style.display = "block";
+// }
+
 function getState(){
     const url = "/api/user";
     fetch(url)
@@ -37,7 +45,7 @@ function getBookingData(){
 // 渲染預定行程
 function renderBooking(data){
     let itineraryData = data.data;
-
+    // isLoading(true)
     // 沒有預定行程
     if(itineraryData === null){
         const content = document.querySelector(".content");
@@ -91,6 +99,7 @@ function renderBooking(data){
         itineraryLocation.append(document.createTextNode(itineraryData.attraction.address));
 
     }
+    // isLoading(false)
 }
 
 // 點選垃圾桶按鈕 - 刪除行程
