@@ -1,4 +1,4 @@
-let passPath = window.location.href;
+let passPath = window.location.search;
 let trackingNumber = passPath.split("number=")[1]
 
 getOrder(trackingNumber)
