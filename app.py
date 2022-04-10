@@ -3,6 +3,7 @@ from flask import *
 from route.attractionAPI import attractionAPI
 from route.memberAPI import memberAPI
 from route.bookingAPI import bookingAPI
+from route.orderAPI import orderAPI
 
 app=Flask(__name__)
 app.config["JSON_AS_ASCII"]=False
@@ -12,6 +13,7 @@ app.secret_key= "1234567890"
 app.register_blueprint(attractionAPI)
 app.register_blueprint(memberAPI)
 app.register_blueprint(bookingAPI)
+app.register_blueprint(orderAPI)
 
 # Pages
 @app.route("/")
@@ -30,3 +32,4 @@ def thankyou():
 
 # app.run('0.0.0.0', port=3000)
 app.run('0.0.0.0', port=3000, debug=True)
+# app.run(port=3000, debug=True)

@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <!-- step 2：tappay -->
+    <script src="https://js.tappaysdk.com/tpdirect/v5.9.0"></script>
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
@@ -21,6 +23,7 @@
 <body>
     <nav class="sticky"></nav>
 
+    <div class="loadEffect"></div>
     <div class="content">
 
         <h2 class="itinerary-username">您好，<span></span>，待預訂的行程如下：</h2>
@@ -35,7 +38,7 @@
                     <h3 class="itinerary-name">台北一日遊：<span></span></h3>
                     <label class="itinerary-label">日期：<span class="itinerary-date"></span></label>
                     <label class="itinerary-label">時間：<span class="itinerary-time"></span></label>
-                    <label class="itinerary-label">費用：<span class="itinerary-price"></span></label>
+                    <label class="itinerary-label">費用：<span>新台幣 </span><span class="itinerary-price"></span><span> 元</span></label>
                     <label class="itinerary-label place">地點：<span class="itinerary-location"></span></label>
                 </div>
             </div>
@@ -43,21 +46,34 @@
         
         <div class="info-layout contact">
             <h3>您的聯絡資訊</h3>
-            <label>聯絡姓名：<input type="text" placeholder="Yakko"></label>
-            <label>連絡信箱：<input type="text" placeholder="imyakkowu@gmail.com"></label>
-            <label>手機號碼：<input type="text" ></label>
+            <label>聯絡姓名：<input type="text" class="contact-name"></label>
+            <label>連絡信箱：<input type="text" class="contact-email"></label>
+            <label>手機號碼：<input type="text" class="contact-phone"></label>
             <p>請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</p>
         </div>
         
         <div class="info-layout creditCard">
             <h3>信用卡付款資訊</h3>
-            <label>卡片號碼：<input type="text" placeholder="**** **** **** ****"></label>
-            <label>過期時間：<input type="text" placeholder="MM / YY"></label>
-            <label>驗證密碼：<input type="text" placeholder="CVV" maxlength="3"></label>
-         </div>
+            <!-- step 1：設定 tappay field container -->
+            <div class="tappay-layout">
+                <label>卡片號碼：</label>
+                <div class="tpfield" id="card-number"></div>
+            </div>
+
+            <div class="tappay-layout">
+                <label>過期時間：</label>
+                <div class="tpfield" id="card-expiration-date"></div>
+            </div>
+
+            <div class="tappay-layout">
+                <label>驗證密碼：</label>
+                <div class="tpfield" id="card-ccv"></div>
+            </div>
+            
+        </div>
         
         <div class="info-layout surePay">
-            <p>總價：新台幣 <span>2000</span> 元</p>
+            <p>總價：新台幣 <span class="itinerary-price"></span> 元</p>
             <button class="sureBtn">確認訂購並付款</button>
         </div>
         
@@ -69,8 +85,11 @@
     </div>
 
 
+
+    
     <script src="../static/javascript/nav.js"></script>
     <script src="../static/javascript/navActive.js"></script>
     <script src="../static/javascript/booking.js"></script>
+    <script src="../static/javascript/payment.js"></script>
 </body>
 </html>
