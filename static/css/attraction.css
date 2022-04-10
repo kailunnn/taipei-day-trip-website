@@ -35,15 +35,15 @@
     animation-duration: 1.5s;
   }
   
-  @-webkit-keyframes fade {
+@-webkit-keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
-  }
+}
   
-  @keyframes fade {
+@keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
-  }
+}
 
 .picSection button {
     cursor: pointer;
@@ -214,15 +214,11 @@ form input[type="radio"]:checked {
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: 104px;
     background-color: #757575;
-    height: 104px;
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 13px;
 }
 
 /* @media (max-width: 1200px){

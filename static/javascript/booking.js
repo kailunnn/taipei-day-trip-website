@@ -62,11 +62,6 @@ function renderBooking(data){
         noBooking.append(document.createTextNode("目前沒有任何待預訂的行程"));
         content.appendChild(noBooking);
 
-        const footer = document.querySelector(".footer");
-        footer.style.position = "fixed";
-        footer.style.left = 0;
-        footer.style.bottom = 0;
-        footer.style.width = '100%';
 
     // 有預定行程
     }else{

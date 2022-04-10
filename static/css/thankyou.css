@@ -1,56 +1,22 @@
-/* footer 固定於底部 */
-html {
-    height: 100%;
-}
-body {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: 1fr auto;
-}
-.footer {
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.content {
-    max-width: 1200px;
-    margin: 0 auto;
-    /* background-color: pink; */
+.tracking-order {
+    display: none;
+    color: #666666;
+    line-height: 35px;
+    text-align: center;
     padding: 40px 20px 80px 20px;
 }
 
-.tracking-order {
-    display: none;
-    /* background-color: green; */
-    text-align: center;
-    color: #666666;
-    line-height: 35px;
-}
-
 .tracking-order > h1 {
-    /* background-color:antiquewhite; */
     font-weight: bold;
     font-size: 24px;
     margin: 25px 0px 10px 0px;
 }
 
-.goHomeBtn:hover {
-    opacity: 0.8;
-}
-
-.goHome img {
-    display: inline-block;
-}
-
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: 104px;
     background-color: #757575;
-    height: 104px;
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 13px;
 }
 

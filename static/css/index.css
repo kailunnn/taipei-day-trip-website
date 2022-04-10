@@ -72,9 +72,7 @@
 
 .attraction {
     max-width: 1200px;
-    margin: 0 auto;
-    /* margin-bottom: 40px; */
-    margin-top: 40px;
+    margin: 40px auto;
 }
 
 .attraction ul {
@@ -114,16 +112,11 @@
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: 104px;
     background-color: #757575;
-    height: 104px;
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 13px;
-    margin-top: 40px;
 }
 
 /* 小於等於 1200 */
